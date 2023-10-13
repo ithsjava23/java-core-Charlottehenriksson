@@ -3,15 +3,15 @@ package org.example.warehouse;
 import java.math.BigDecimal;
 import java.util.UUID;
 public class ProductRecord {
-    private final UUID id;
+    private final UUID uuid;
     private final String name;
     private final Category category;
-    public BigDecimal price;
+    private BigDecimal price;
 
     public ProductRecord(UUID id, String name, Category category, BigDecimal price) {
 
-        if (id == null) this.id = UUID.randomUUID();
-        else this.id = id;
+        if (id == null) this.uuid = UUID.randomUUID();
+        else this.uuid = id;
         this.name = name;
         this.category = category;
         this.price = price;
@@ -21,8 +21,8 @@ public class ProductRecord {
         this.price = price;
     }
 
-    public UUID getId() {
-        return id;
+    public UUID uuid() {
+        return this.uuid;
     }
 
     public String getName() {
@@ -30,10 +30,10 @@ public class ProductRecord {
     }
 
     public Category category() {
-        return getCategory();
+        return this.category;
     }
 
     public BigDecimal price() {
-        return getPrice();
+        return this.price;
     }
 }
