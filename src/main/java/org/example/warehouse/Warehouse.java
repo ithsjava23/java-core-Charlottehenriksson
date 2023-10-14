@@ -56,9 +56,8 @@ public class Warehouse {
     public void updateProductPrice(UUID id, BigDecimal newPrice) {
         if (!productMap.containsKey(id)) {
             throw new IllegalArgumentException("Product with that id doesn't exist.");
-        } else if (newPrice == null) {
-            newPrice = BigDecimal.ZERO;
-        } else {
+        }
+        else {
             ProductRecord productRecord = productMap.get(id);
             productRecord.setPrice(newPrice);
             if (!changedProducts.contains(productRecord)) {

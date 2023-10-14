@@ -8,10 +8,10 @@ public class ProductRecord {
     private final Category category;
     private BigDecimal price;
 
-    public ProductRecord(UUID id, String name, Category category, BigDecimal price) {
+    public ProductRecord(UUID uuid, String name, Category category, BigDecimal price) {
 
-        if (id == null) this.uuid = UUID.randomUUID();
-        else this.uuid = id;
+        if (uuid == null) this.uuid = UUID.randomUUID();
+        else this.uuid = uuid;
         this.name = name;
         this.category = category;
         this.price = price;
@@ -23,10 +23,6 @@ public class ProductRecord {
 
     public UUID uuid() {
         return this.uuid;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public Category category() {
